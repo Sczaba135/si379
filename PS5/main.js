@@ -113,9 +113,10 @@ function drawBoard() {
         const barIndex = Math.floor(col/2); // The index of the bar that corresponds to the final column (since there are 2 pegs per bar)
         const newBarHeight = BAR_SCALE_FACTOR * finalColHitCount / NUM_BALLS; // The new height of the bar
         await Promise.all([
-            animateDrop(circle, y + 20, DELAY_WHEN_DROP / parseFloat(speedInput.value)),
+            animateDrop(circle, y - 20, DELAY_WHEN_DROP / parseFloat(speedInput.value)),
             changeHeightTo(actualBars[barIndex], newBarHeight, DELAY_WHEN_DROP / parseFloat(speedInput.value))
         ]);
+        
 
         circle.remove(); // Remove the circle from the SVG element
     }
@@ -185,7 +186,7 @@ async function animateDrop(circle, toY, duration) {
     function step() {
         const pct = (Date.now() - animationStarted) / duration;
         const pos = easeOutQuad(pct);
-        const value = fromY + (toY - fromY) * pos;
+        const value = fromY - (toY - fromY) * pos;
         circle.setAttribute('cy', value);
         circle.setAttribute('opacity', 1 - pos);
 
