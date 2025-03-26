@@ -186,7 +186,7 @@ async function animateDrop(circle, toY, duration) {
     function step() {
         const pct = (Date.now() - animationStarted) / duration;
         const pos = easeOutQuad(pct);
-        const value = fromY - (toY - fromY) * pos;
+        const value = fromY + (toY - fromY) * pos;
         circle.setAttribute('cy', value);
         circle.setAttribute('opacity', 1 - pos);
 
