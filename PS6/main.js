@@ -1,3 +1,5 @@
+// Chat gpt was used on this project
+
 
 let tasks = JSON.parse(localStorage.getItem('lemonTasks')) || [];
 let currentTaskIndex = null;
