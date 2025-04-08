@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lemon Timer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #fefae0;
+      color: #333;
+    }
+    h1 {
+      color: #bc6c25;
+    }
+    #controls, #task-form {
+      margin-bottom: 1rem;
+    }
+    #task-input {
+      padding: 0.5rem;
+      width: 200px;
+    }
+    button {
+      margin-left: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #dda15e;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #bc6c25;
+      color: white;
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0;
+    }
+    .task input {
+      flex: 1;
+      margin-right: 0.5rem;
+      padding: 0.3rem;
+    }
+    .lemons {
+      margin-left: 0.5rem;
+      color: gold;
+    }
+    #timer-display {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍋 Lemon Timer</h1>
+
+  <div id="controls">
+    <label>Work (min): <input type="number" id="work-duration" value="25" /></label>
+    <label>Break (min): <input type="number" id="break-duration" value="5" /></label>
+  </div>
+
+  <div id="task-form">
+    <input type="text" id="task-input" placeholder="Enter task" />
+    <button id="add-task-btn">Add Task</button>
+  </div>
+
+  <div id="tasks"></div>
+
+  <div id="timer-display"></div>
+  <button id="cancel-btn" class="hidden">Cancel</button>
+
+  <script src="main.js"></script>
+</body>
+</html>
